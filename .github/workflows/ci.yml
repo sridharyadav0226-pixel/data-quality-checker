@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run unit tests
+        run: python -m unittest discover tests -v
+
+      - name: Run data quality check against sample data
+        run: python dq_checker.py sample_data.csv --rules rules_example.json
+        continue-on-error: true   # sample_data.csv has intentional issues; demonstrates the tool catching them

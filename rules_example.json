@@ -1,0 +1,10 @@
+{
+  "required_columns": ["order_id", "customer_email", "quantity", "unit_price"],
+  "not_null_columns": ["order_id", "customer_email", "quantity"],
+  "unique_columns": ["order_id"],
+  "numeric_columns": ["quantity", "unit_price"],
+  "value_ranges": {
+    "quantity": [1, 1000],
+    "unit_price": [0.01, 10000]
+  }
+}

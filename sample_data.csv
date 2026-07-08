@@ -1,9 +1,0 @@
-order_id,customer_email,quantity,unit_price
-O1001,a@example.com,3,19.99
-O1002,b@example.com,,12.50
-O1003,c@example.com,2,not_a_price
-O1004,,1,45.00
-O1005,a@example.com,5,9.99
-O1001,d@example.com,2,15.00
-O1006,e@example.com,-4,20.00
-O1007,f@example.com,1,999999
